@@ -1,0 +1,335 @@
+&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+
+	&lt;link rel=&quot;icon&quot; 
+      type=&quot;image/png&quot; 
+      href=&quot;graphics/tt/favicon-16x16.png&quot;
+	  sizes=&quot;16x16&quot;&gt;
+	&lt;link rel=&quot;icon&quot; 
+	      type=&quot;image/png&quot; 
+	      href=&quot;graphics/tt/favicon-32x32.png&quot;
+		  sizes=&quot;32x32&quot;&gt;
+
+	&lt;!-- Global site tag (gtag.js) - Google Analytics --&gt;
+	&lt;script async src=&quot;https://www.googletagmanager.com/gtag/js?id=UA-47882935-5&quot;&gt;&lt;/script&gt;
+	&lt;script&gt;
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag(&#039;js&#039;, new Date());
+
+	  gtag(&#039;config&#039;, &#039;UA-47882935-5&#039;);
+	&lt;/script&gt;
+
+	&lt;!-- longitude --&gt;
+	&lt;script src=&quot;https://lngtd.com/bonk.js&quot;&gt;&lt;/script&gt;
+
+
+	&lt;meta charset=&quot;utf-8&quot;&gt;
+	&lt;title&gt;bonk.io - Official Site: Play Bonk Here!&lt;/title&gt;
+
+	&lt;link rel=&quot;preload&quot; href=&quot;fonts/fptmed.otf&quot; as=&quot;font&quot; crossorigin=&quot;anonymous&quot; /&gt;
+	&lt;link rel=&quot;preload&quot; href=&quot;fonts/fptbook.otf&quot; as=&quot;font&quot; crossorigin=&quot;anonymous&quot; /&gt;
+	&lt;link rel=&quot;preload&quot; href=&quot;fonts/fptbook_fixed_5.otf&quot; as=&quot;font&quot; crossorigin=&quot;anonymous&quot; /&gt;
+	&lt;link rel=&quot;preload&quot; href=&quot;fonts/fptb.otf&quot; as=&quot;font&quot; crossorigin=&quot;anonymous&quot; /&gt;
+
+
+	
+
+
+
+&lt;/head&gt;
+
+
+
+
+
+&lt;!-- debug  OLD POSTION! --&gt;
+
+
+
+&lt;!-- debug --&gt;
+
+
+
+
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/roomlist.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/checkbox.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/maploadwindow.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/leveleditor.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/newbonklobby.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/ingamechat.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/simplemenu.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/pagelayout.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/skineditor.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/mapeditor.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/prettymenu.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/classicactive.css&quot; id=&quot;classicoverridecss&quot;&gt;
+
+&lt;link href=&quot;js/colorpicker/color-picker.css&quot; rel=&quot;stylesheet&quot;&gt;
+
+
+
+
+
+&lt;body&gt;
+
+
+
+
+
+&lt;style&gt;
+	
+
+	@font-face {
+	  font-family: futurept_light;
+	  src: url(fonts/fptl.otf);
+	}
+	@font-face {
+	  font-family: futurept_book;
+	  src: url(fonts/fptbook.otf);
+	}
+	@font-face {
+	  font-family: futurept_demi;
+	  src: url(fonts/futurapt_demi.otf);
+	}
+	@font-face {
+	  font-family: futurept_medium;
+	  src: url(fonts/fptmed.otf);
+	}
+	@font-face{
+		font-family: futurept_b1;
+		src: url(fonts/futurept_7a255.otf);
+	}
+	@font-face{
+		font-family: futurept_bold;
+		src: url(fonts/fptb.otf);
+	}
+	@font-face {
+	  font-family: futurept_demi_oblique;
+	  src: url(fonts/fptdo.otf);
+	}
+
+	@font-face {
+	  font-family: futurept_medium_oblique;
+	  src: url(fonts/fptmo.otf);
+	}
+
+	
+
+
+
+
+	#bgreplay{
+		width:100%;
+		height:100%;
+		overflow: hidden;
+		position: absolute;
+		top:0;
+	}
+
+	#gamerenderer{
+
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top:0px;
+		left:0px;
+
+		margin: auto;
+		overflow: hidden;
+		visibility: hidden;
+	}
+
+	#r3dcanvas{
+		position : absolute;
+		left: 50%;
+		top: 50%;
+		-webkit-transform: translate(-50%, -50%);
+		-moz-transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+	}
+
+	#gamethumbbox {
+
+		width: 150px;
+		display: inline-block;
+		text-align: center;
+		text-decoration: none;
+		color:#ffffff;
+		text-shadow: 1px 1px 3px #000000;
+		font-family: Tahoma, Geneva, sans-serif;
+    	font-size: 13px;
+
+	}
+
+	#gamethumbbox a, a:visited{
+
+		text-decoration: none;
+		color: #ffffff; 
+
+	}
+
+	#gamethumbbox img { 
+		border: 3px solid #222644; 
+	}
+
+	.thumbbox_name{
+		display: block;
+    	margin-top: -17px;
+	}
+	.thumbbox_count{
+		margin-top: -15px;
+    	display: block;
+	}
+
+
+
+	@-webkit-keyframes shakeanim {
+		0% { -webkit-transform: translate(2px, 1px) rotate(0deg); }
+		10% { -webkit-transform: translate(-1px, -2px) rotate(-1deg); }
+		20% { -webkit-transform: translate(-3px, 0px) rotate(1deg); }
+		30% { -webkit-transform: translate(0px, 2px) rotate(0deg); }
+		40% { -webkit-transform: translate(1px, -1px) rotate(1deg); }
+		50% { -webkit-transform: translate(-1px, 2px) rotate(-1deg); }
+		60% { -webkit-transform: translate(-3px, 1px) rotate(0deg); }
+		70% { -webkit-transform: translate(2px, 1px) rotate(-1deg); }
+		80% { -webkit-transform: translate(-1px, -1px) rotate(1deg); }
+		90% { -webkit-transform: translate(2px, 2px) rotate(0deg); }
+		100% { -webkit-transform: translate(1px, -2px) rotate(-1deg); }
+	}
+	.shake:hover,
+	.shake:focus {
+		-webkit-animation-name: shakeanim;
+		-webkit-animation-duration: 0.4s;
+		-webkit-transform-origin:50% 50%;
+		-webkit-animation-iteration-count: infinite;
+		-webkit-animation-timing-function: linear;
+	}
+	.shake {
+		display:inline-block
+	}
+
+&lt;/style&gt;
+
+&lt;div id=&quot;bonkioheader&quot;&gt;
+	
+	&lt;div id=&quot;gamethumbbox&quot;&gt;
+		&lt;a href=&quot;https://bonk.io&quot; target=&quot;blank&quot;&gt;
+			&lt;img src=&quot;graphics/tt/bonkgameicon3.png&quot; class=&quot;shake&quot;&gt;
+			&lt;span class=&quot;thumbbox_name&quot;&gt;bonk.io&lt;/span&gt;
+			&lt;span id=&quot;header_bonk_playercount&quot; class=&quot;thumbbox_count&quot;&gt;(? online)&lt;/span&gt;
+		&lt;/a&gt;
+	&lt;/div&gt;
+	&lt;div id=&quot;gamethumbbox&quot;&gt;
+		&lt;a href=&quot;https://supercarstadium.com&quot; target=&quot;blank&quot;&gt;
+			&lt;img src=&quot;graphics/tt/caricon.png&quot; class=&quot;shake&quot;&gt;
+			&lt;span class=&quot;thumbbox_name&quot;&gt;Supercar Stadium&lt;/span&gt;
+			&lt;span id=&quot;header_car_playercount&quot; class=&quot;thumbbox_count&quot;&gt;(? online)&lt;/span&gt;
+		&lt;/a&gt;
+	&lt;/div&gt;
+	&lt;div id=&quot;bonkiobugemail&quot;&gt;
+		issues? &lt;a href=&quot;/cdn-cgi/l/email-protection&quot; class=&quot;__cf_email__&quot; data-cfemail=&quot;ddbfa8baae9dbfb2b3b6f3b4b2&quot;&gt;[email&amp;#160;protected]&lt;/a&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;iframe id=&quot;maingameframe&quot; src=&quot;gameframe-release.html&quot;&gt;&lt;/iframe&gt;
+
+
+&lt;div id=&quot;adboxverticalleftCurse&quot;&gt;
+	&lt;div id=&#039;bonk_d_1&#039;&gt;&lt;/div&gt;&lt;!-- longitude square ad--&gt;
+&lt;/div&gt;
+  
+&lt;div id=&quot;adboxverticalCurse&quot;&gt;
+	&lt;div id=&#039;bonk_d_2&#039;&gt;&lt;/div&gt;&lt;!-- longitude square ad --&gt;
+&lt;/div&gt;
+
+
+
+
+	
+	
+
+
+
+&lt;div id=&quot;descriptioncontainer&quot;&gt;
+
+	&lt;div id=&quot;descriptioninner&quot;&gt;
+
+		&lt;p class=&quot;descriptiontitle&quot;&gt;Welcome to Bonk.io!&lt;/p&gt;
+
+		&lt;p class=&quot;descriptionsubtitle&quot;&gt;What&#039;s Bonk.io?&lt;/p&gt;
+
+			&lt;img src=&quot;graphics/tt/bonkthumb1.jpg&quot; class=&quot;descriptionthumbl&quot;&gt;
+
+			&lt;p class=&quot;descriptionpara&quot;&gt;Bonk is a multiplayer physics game, for up to eight players at once. Push your opponents off the edge of the level, the last man standing wins!&lt;/p&gt;
+
+			&lt;p class=&quot;descriptionpara&quot;&gt;Battle your friends or anyone from anywhere in the world in last man standing or team based matches. Bonk.io is a game of strategy as well as raw skill, position yourself carefully, and dodging an incoming collision can be as effective as smashing into your enemies!&lt;/p&gt;
+
+			&lt;img src=&quot;graphics/tt/bonkthumb2.jpg&quot; class=&quot;descriptionthumbr&quot;&gt;
+
+			&lt;p class=&quot;descriptionpara&quot;&gt;Use the arrow keys to move, and hold X to make yourself heavier. When you are heavy, you have much more momentum, so you will bash enemies much further, and you are much harder to push around. But you will also be much less maneuverable!&lt;/p&gt;
+
+
+
+			&lt;p class=&quot;descriptionpara&quot;&gt;Use the in-game level editor to easily create your own maps, and then play on them! Play on &lt;strike&gt;hundreds&lt;/strike&gt; millions of custom maps created by the community, and upload your own for others to play on.&lt;/p&gt;
+
+			&lt;p class=&quot;descriptionpara&quot;&gt;Use the quick play feature to quickly get into a game, or create custom games and set it up however you like.&lt;/p&gt;
+
+			&lt;p class=&quot;descriptionpara&quot;&gt;Bonkio is being constantly updated with new features and improvements, so check back often! And most of all - have fun!&lt;/p&gt;
+
+
+		&lt;p class=&quot;descriptionsubtitle&quot;&gt;The New Version&lt;/p&gt;
+
+		&lt;p class=&quot;descriptionpara&quot;&gt;This version of the game, previously known as &quot;Bonk 2&quot;, is now the main version of the game. Unlike the previous version it does not use Flash, and should be future-proof for years to come.&lt;/p&gt;
+
+		&lt;p class=&quot;descriptionpara&quot;&gt;&lt;b&gt;Please use your existing username and password to log in.&lt;/b&gt; All accounts, maps and skins have transferred over.&lt;/p&gt;
+
+		&lt;p class=&quot;descriptionpara&quot;&gt;Your friend list, however, has not. To prevent abuse, in order to add someone as a friend you must send them a friend request and they must accept it. You can view a list of your old friends from the Flash version at the bottom of the friends list, by clicking &#039;Friends From Flash Version&#039; and sending each one a friend request.&lt;/p&gt;
+
+		&lt;p class=&quot;descriptionsubtitle&quot;&gt;Flash to HTML5&lt;/p&gt;
+
+		
+			&lt;p class=&quot;descriptionpara&quot;&gt;Sadly, Adobe Flash reached the end of its life in 2020. Bonk.io was built in Flash, and if left unchanged would have been lost forever in early 2021.&lt;/p&gt;
+			&lt;p class=&quot;descriptionpara&quot;&gt;Originally I set out to create a sequel, &quot;Bonk 2&quot;, that would be written in HTML5 and take Bonk beyond the Flash Apocalypse. Along the way I discovered how difficult it is to take something that&#039;s grown larger than you ever anticipated and attempt to improve it.&lt;/p&gt;
+
+			&lt;p class=&quot;descriptionpara&quot;&gt;The new game attempted far too much, and didn&#039;t have the charm of the original. In addition, while many players were excited for a sequel, most simply didn&#039;t want the original game to go away.&lt;/p&gt;
+
+			&lt;p class=&quot;descriptionpara&quot;&gt;So it was decided to instead create a more faithful reproduction of the original. This would also mean all user accounts, maps and skins can carry over to the new version. This new version is the state the game is currently in today.&lt;/p&gt;
+
+			
+			&lt;p class=&quot;descriptionpara&quot;&gt;-Chaz&lt;br&gt;Developer&lt;/p&gt;
+		&lt;/p&gt;
+
+	&lt;/div&gt;
+
+&lt;/div&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;script data-cfasync=&quot;false&quot; src=&quot;/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js&quot;&gt;&lt;/script&gt;&lt;/body&gt;
+
+
+
+
+
+
+
+&lt;/html&gt;
